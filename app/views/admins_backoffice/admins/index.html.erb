@@ -31,11 +31,11 @@
                   </button>
                 <% end %>
 
-                <%# <%= link_to admins_backoffice_admin_path(admin), method: :delete, data: { confirm: t('message.confirm_with', item: admin.email ) }  do %> 
+             <%= link_to admins_backoffice_admin_path(admin), method: :delete, data: { confirm: t('message.confirm_with', item: admin.email ) }  do %> 
                   <button type="button" class="btn btn-danger btn-circle">
                   <i class="fa fa-minus"></i>
                   </button>
-                 <%# <% end %> 
+              <% end %> 
               </td>
           </tr>
           <% end %>
@@ -43,6 +43,6 @@
   </table>
 
   <div class="text-center">
-    <%# <%= paginate @admins %> 
+    <%= paginate @admins %>
   </div>
 </div>
