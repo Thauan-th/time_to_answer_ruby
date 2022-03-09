@@ -47,7 +47,9 @@
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">            
-                        
+                       <%= link_to destroy_admin_session_path, method: :delete do %>
+                              <i class="fa fa-sign-out fa-fw"></i> Sair
+                          <% end %>
                     </ul>
                     <!-- /.dropdown-user -->
                 </li>
@@ -59,7 +61,22 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         
-                       
+                          <li class="nav-item active">
+
+                          <%= link_to admins_backoffice_welcome_index_path do  %>
+                             <i class="fa fa-dashboard fa-fw"></i> 
+                            <span>Dashboard</span></a>
+                          
+                          <% end %>
+                        </li>
+                       <li class="nav-item active">
+                          <%= link_to admins_backoffice_admins_path do  %>
+                        
+                                <i class="fa fa-users   fa-fw"></i> 
+                                <span>Administradores</span></a>
+                            <% end %>
+                        </li>     
+                    </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
             </div>
