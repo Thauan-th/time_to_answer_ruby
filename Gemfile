@@ -39,6 +39,7 @@ gem 'tty-spinner'
 gem 'devise'
 gem 'rails-i18n','~> 5.1'
 gem 'faker'
+gem "cocoon"
 gem 'kaminari'
 gem 'kaminari-i18n'
 
