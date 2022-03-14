@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-lg-12">
-        <%# <h1 class="page-header"><%= t('message.listing', model: @admins.model_name.human(count: 2)) %></h1> 
+        <h1 class="page-header">Listando Perguntas</h1> 
     </div>
     <!-- /.col-lg-12 -->
 </div>
@@ -10,8 +10,8 @@
       <thead>
           <tr>
               <th>#</th>
-              <th>Descriçao</th>
-              <th>Assunto</th>
+              <th><%= @questions.model.human_attribute_name(:description) %></th>
+              <th><%= @questions.model.human_attribute_name(:subject)%></th>
               <th>
                  <%= link_to new_admins_backoffice_question_path, class:"btn btn-success btn-circle" do %> 
                   <i class="fa fa-plus"></i>
@@ -25,7 +25,7 @@
               <td><%= question.id %></td>
               <td><%= question.description.truncate(50) %></td>
               <td><%= question.subject.description.truncate(30) %></td>
-              <td style="width: 100px">
+              <td style="width: 100px"> 
 
                 <%= link_to edit_admins_backoffice_question_path(question) do %>
                   <button type="button" class="btn btn-primary btn-circle">
@@ -33,7 +33,7 @@
                   </button>
                 <% end %>
 
-             <%= link_to admins_backoffice_question_path(question), method: :delete, data: { confirm: t('message.confirm_with', item: question.id ) }  do %> 
+             <%= link_to admins_backoffice_question_path(question), method: :delete, data: { confirm: "Deseja realmente apagar ?" }  do %> 
                   <button type="button" class="btn btn-danger btn-circle">
                   <i class="fa fa-minus"></i>
                   </button>
