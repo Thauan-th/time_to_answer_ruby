@@ -8,7 +8,7 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :user_profile , reject_if: :all_blank
   after_create :set_statistic
 #validaçao
-  validates :first_name , presence: true , length: {minimum:5} ,on: :update
+  validates :first_name , presence: true , length: {minimum:5} ,on: :update , unless: :reset_password_token_present?
 
 #virtual atributo
   def full_name
@@ -17,5 +17,8 @@ class User < ApplicationRecord
   private 
   def set_statistic
     AdminStatistic.set_event(AdminStatistic::EVENTS[:total_users])
+  end
+  def reset_password_token_present?
+    !!$global_params[:user][:reset_password_token]
   end
 end
